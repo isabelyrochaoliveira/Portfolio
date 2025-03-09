@@ -1,0 +1,320 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #290000;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 650px 650px 650px 1100px 650px 1700px 300px;
+    grid-template-areas: 
+        "menu home"
+        "menu sobre"
+        "menu habilidade"
+        "menu formacao"
+        "menu projeto"
+        "menu experiencia"
+        "menu contato";
+}
+
+aside {
+    grid-area: menu;
+    background-color: #290000;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    width: 20%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu a {
+    display: flex;
+    text-decoration: none;
+    color: #c9d1d9;
+    font-size: 1em;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.menu a:hover {
+    color: #d30000;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: invert(72%) sepia(22%) saturate(321%) hue-rotate(175deg) brightness(95%) contrast(91%);
+}
+
+header {
+    grid-area: home;
+    background-image: url(./assets/imagens/fundoHome.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+#sobre, #habilidade, #formacao, #projeto, #experiencia {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#sobre {
+    grid-area: sobre;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#habilidade {
+    grid-area: habilidade;
+    background-color: #faf8f8;
+}
+
+#formacao {
+    grid-area: formacao;
+    background-color: #fff;
+}
+
+#projeto {
+    grid-area: projeto;
+    background-color: #faf8f8;
+}
+
+#experiencia {
+    grid-area: experiencia;
+    background-color: #fff;
+}
+
+footer {
+    grid-area: contato;
+    background-color: #fae0e4;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#direitos {
+    padding-top: 50px;
+    text-align: end;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #290000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #d30000, #290000);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+button {
+    background-color: #290000;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #d30000;
+    transform: scale(1.05);
+}
+
+.dataFormacao {
+    background-color: #e66063;
+    display: inline-block;
+    padding: 5px;
+}
+
+.slider {
+    display: block;
+    height: 293px;
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+}
+
+.slider img {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+.slider label {
+    background-color: #290000;
+    bottom: 10px;
+    cursor: pointer;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 10;
+}
+
+.slider label:hover {
+    background-color: #d30000;
+}
+
+.slider li:nth-child(1) label {
+    left: 10px;
+}
+
+.slider li:nth-child(2) label {
+    left: 40px;
+}
+
+.slider li:nth-child(3) label {
+    left: 70px;
+}
+
+.slider li:nth-child(4) label {
+    left: 100px;
+}
+
+.slider li:nth-child(5) label {
+    left: 130px;
+}
+
+.slider input {
+    display: none;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.projeto-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.formacao-container, .extracurricular-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formacao-item, .extracurricular-item {
+    background-color: #faf8f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.formacao-item h3, .extracurricular-item h3 {
+    margin: 10px 0 5px;
+    color: #290000;
+}
+
+.formacao-item p, .extracurricular-item p {
+    margin: 0;
+    color: #444;
+}
+
+.iconeContato:hover {
+    background-color: #fdc3cc;
+}
+
+.linkProjeto:hover {
+    color: #d30000;
+}
+
+#item1:hover {
+    transform: scale(1.08);
+}
+
+#item2:hover {
+    transform: scale(1.08);
+}
+
+#item3:hover {
+    transform: scale(1.08);
+}
+
+#bragantec {
+    width: 20%;
+}
+
+.sobreP {
+    font-size: larger;
+}
+
+.skills-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
